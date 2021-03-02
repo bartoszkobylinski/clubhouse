@@ -9,11 +9,23 @@
 <body>
     <h3>eeeeeeeeeeeeeeeeeeeee</h3>
 
-
+    
     <form action="" method="post">
-        <input type="url" name="" id="" placeholder="https://joinclubhouse.com/event">
+        {% csrf_token %}
+        {{ form.as_p }}
         <input type="submit" value="upload">
     </form>
+
+    {% for room in room %}
+        {room.title}
+        {room.date}
+        {room.description}
+    {% endfor %}
+
+    {% for host in hosts %}
+        {host.name}
+        {host.avatar}
+    {% endfor %}
     
 </body>
 </html>
